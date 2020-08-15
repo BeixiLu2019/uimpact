@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_152226) do
+ActiveRecord::Schema.define(version: 2020_08_15_090829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_08_13_152226) do
   create_table "account_transactions", force: :cascade do |t|
     t.string "in_out_indicator"
     t.float "cash_amount"
-    t.date "transaction_date"
+    t.datetime "transaction_date"
     t.string "transaction_reference"
     t.bigint "client_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_08_13_152226) do
   create_table "deals", force: :cascade do |t|
     t.string "buy_sell_indicator"
     t.float "investment_amount"
-    t.date "trade_date"
+    t.datetime "trade_date"
     t.date "settlement_date"
     t.string "trade_status"
     t.bigint "client_id", null: false
